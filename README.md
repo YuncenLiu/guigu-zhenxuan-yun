@@ -196,3 +196,36 @@ pnpm install -D husky
 ```sh
 npx husky-init
 ```
+
+### 5、配置 commitlint
+
+标准化 commit 信息，不能随便写
+
+安装包：
+
+```sh
+pnpm add @commitlint/config-conventional @commitlint/cli -D
+```
+
+然后添加配置文件 `commitlint.config.cjs`
+
+```
+'feat', // 新特性、新功能
+'fix',  // 修改bug
+'docs', // 文档修改
+'style',    // 代码格式修改，不是 css 修改
+'refactor', // 代码重构
+'perf', // 优化相关，比如性能提升
+'test', // 测试用例修改
+'chore',    // 其他修改，比如改变构建流程、增加依赖库、工具等
+'revert',   // 会滚到上一个版本
+'build',    // 编译相关修改，例如版本发布、对项构建或者依赖的改动
+```
+
+配置 husky 保证提交的时候能校验住 会生成 `.husky/commit-msg` 文件
+
+```sh
+npx husky add .husky/commit-msg
+```
+
+在这个文件中配置 `pnpm commitlint`，后续提交的时候， `-m` 必须符合以上添加的配置才行，必须是英文，且冒号后面需要空一格，不能省略
