@@ -152,3 +152,31 @@ css: {
 ### 6、mock 数据
 
 [vite-plugin-mock 官网](https://github.com/vbenjs/vite-plugin-mock/blob/main/README.zh_CN.md) 只在开发阶段使用，上线之后，就不用了
+
+在 vite.config.ts 配置文件中配置，然后在根目录 `moke` 文件
+
+```js
+viteMockServe({
+  // 保证开发阶段可以使用
+  localEnabled: command === 'serve',
+}),
+```
+
+使用 axios 进行测试，直接写在 main.ts 中
+
+```js
+import axios from 'axios'
+// 登录接口
+axios({
+  url: '/api/user/login',
+  method: 'POST',
+  data: {
+    username: 'admin',
+    password: '123',
+  },
+})
+```
+
+### 7、axios 二次封装
+
+[视频地址](https://www.bilibili.com/video/BV1Xh411V7b5/?p=28) 详细配置见：`/src/utils/request.ts`

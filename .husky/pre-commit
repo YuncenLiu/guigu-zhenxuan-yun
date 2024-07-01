@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# 提交到远程之前会执行下面的命令
-pnpm format
-pnpm commitlint
+

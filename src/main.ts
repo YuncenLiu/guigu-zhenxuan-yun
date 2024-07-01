@@ -31,6 +31,7 @@ import globalComponent from '@/components'
 // 安装自定义插件, 会主动把 @/components/index.ts 里面的 install() 引入进来
 app.use(globalComponent)
 
+/* 测试 mock 是否可用
 // 测试代码：测试假的接口能否使用
 import axios from 'axios'
 // 登录接口
@@ -39,7 +40,8 @@ axios({
   method: 'POST',
   data: {
     username: 'admin',
-    password: '111111',
+    password: '123',
   },
-})
+})*/
+
 app.mount('#app')
