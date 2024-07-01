@@ -11,8 +11,6 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
 import App from '@/App.vue'
 
-
-
 // 获取实例对象
 const app = createApp(App)
 // 安装 element-plus 插件
@@ -31,6 +29,5 @@ import 'virtual:svg-icons-register'
 import globalComponent from '@/components'
 // 安装自定义插件, 会主动把 @/components/index.ts 里面的 install() 引入进来
 app.use(globalComponent)
-
 
 app.mount('#app')

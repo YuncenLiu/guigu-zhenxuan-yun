@@ -4,11 +4,10 @@
   <el-button type="danger" size="default" :icon="Delete">删除按钮</el-button>
   <h2>{{ data.VITE_APP_TITLE }}</h2>
   <svg-icon name="phone" color="red" width="50px" height="50px"></svg-icon>
-  <pagination/>
+  <pagination />
 </template>
 
 <script setup lang="ts">
-
 import { Plus, Edit, Delete } from '@element-plus/icons-vue'
 import { reactive } from 'vue'
 let data = reactive(import.meta.env)

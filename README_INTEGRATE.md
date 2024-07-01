@@ -64,13 +64,12 @@ console.log('test', import.meta.env)
 
 ```json
 {
-"build:test": "vue-tsc --noEmit --skipLibCheck && vite build --mode test",  
-"build:pro": "vue-tsc --noEmit --skipLibCheck && vite build --mode production",
+  "build:test": "vue-tsc --noEmit --skipLibCheck && vite build --mode test",
+  "build:pro": "vue-tsc --noEmit --skipLibCheck && vite build --mode production"
 }
 ```
 
-
-### 4、svg图片配置
+### 4、svg 图片配置
 
 安装 `pnpm install vite-plugin-svg-icons -D`
 
@@ -79,43 +78,41 @@ console.log('test', import.meta.env)
 ```js
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
-createSvgIconsPlugin({  
-  iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],  
-  symbolId: 'icon-[dir]-[name]',  
+createSvgIconsPlugin({
+  iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+  symbolId: 'icon-[dir]-[name]',
 }),
 ```
 
 `main.ts` 里配置 `import 'virtual:svg-icons-register'`
-
-
 
 #### 4.1、注册全局组件
 
 在 main.ts 中引入 `components/index.ts` 文件
 
 ```js
-// 引入自定义插件，注册整个项目全局  
-import globalComponent from '@/components'  
-// 安装自定义插件, 会主动把 @/components/index.ts 里面的 install() 引入进来  
+// 引入自定义插件，注册整个项目全局
+import globalComponent from '@/components'
+// 安装自定义插件, 会主动把 @/components/index.ts 里面的 install() 引入进来
 app.use(globalComponent)
 ```
 
 把所有需要暴露出去的组件，通过 index.ts 暴露出去，做到统一管理
 
 ```js
-import SvgIcon from './SvgIcon/index.vue'  
-import Pagination from './Pagination/index.vue'  
-  
-// 全局组件对象  
-const allGlobalComponent = {SvgIcon, Pagination}  
-// 对外暴露插件对象  
-export default {  
-    install(app) {  
-        // 注册项目全部的全局组件  
-        Object.keys(allGlobalComponent).forEach(key => {  
-            app.component(key, allGlobalComponent[key])  
-        })  
-    }  
+import SvgIcon from './SvgIcon/index.vue'
+import Pagination from './Pagination/index.vue'
+
+// 全局组件对象
+const allGlobalComponent = { SvgIcon, Pagination }
+// 对外暴露插件对象
+export default {
+  install(app) {
+    // 注册项目全部的全局组件
+    Object.keys(allGlobalComponent).forEach((key) => {
+      app.component(key, allGlobalComponent[key])
+    })
+  },
 }
 ```
 

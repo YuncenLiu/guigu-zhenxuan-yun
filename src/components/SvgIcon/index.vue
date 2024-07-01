@@ -3,7 +3,12 @@
   <svg :width="width" :height="height">
     <!--    xlink:href 决定使用哪个图标， 属性值务必 #icon-图标名称 ，-->
     <!--    <use xlink:href="#icon-phone" width="40px" height="40px" fill="skyblue"></use>-->
-    <use :xlink:href="prefix + name" :width="width" :height="height" :fill="color"></use>
+    <use
+      :xlink:href="prefix + name"
+      :width="width"
+      :height="height"
+      :fill="color"
+    ></use>
   </svg>
 </template>
 
@@ -11,24 +16,22 @@
 let props = defineProps({
   prefix: {
     type: String,
-    default: '#icon-'
+    default: '#icon-',
   },
   name: String,
   color: {
     type: String,
-    default: ''
+    default: '',
   },
   width: {
     type: String,
-    default: '16px'
+    default: '16px',
   },
   height: {
     type: String,
-    default: '16px'
-  }
+    default: '16px',
+  },
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
