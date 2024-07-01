@@ -51,3 +51,72 @@ export default defineConfig({
   },
 })
 ```
+
+### 3、使用环境变量
+
+创建 `.env.development` 文件，然后在组件中使用
+
+```js
+console.log('test', import.meta.env)
+```
+
+也可以在构建的时候配置不同构建模式
+
+```json
+{
+"build:test": "vue-tsc --noEmit --skipLibCheck && vite build --mode test",  
+"build:pro": "vue-tsc --noEmit --skipLibCheck && vite build --mode production",
+}
+```
+
+
+### 4、svg图片配置
+
+安装 `pnpm install vite-plugin-svg-icons -D`
+
+配置在 defineConfig > plugins 下
+
+```js
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+
+createSvgIconsPlugin({  
+  iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],  
+  symbolId: 'icon-[dir]-[name]',  
+}),
+```
+
+`main.ts` 里配置 `import 'virtual:svg-icons-register'`
+
+
+
+#### 4.1、注册全局组件
+
+在 main.ts 中引入 `components/index.ts` 文件
+
+```js
+// 引入自定义插件，注册整个项目全局  
+import globalComponent from '@/components'  
+// 安装自定义插件, 会主动把 @/components/index.ts 里面的 install() 引入进来  
+app.use(globalComponent)
+```
+
+把所有需要暴露出去的组件，通过 index.ts 暴露出去，做到统一管理
+
+```js
+import SvgIcon from './SvgIcon/index.vue'  
+import Pagination from './Pagination/index.vue'  
+  
+// 全局组件对象  
+const allGlobalComponent = {SvgIcon, Pagination}  
+// 对外暴露插件对象  
+export default {  
+    install(app) {  
+        // 注册项目全部的全局组件  
+        Object.keys(allGlobalComponent).forEach(key => {  
+            app.component(key, allGlobalComponent[key])  
+        })  
+    }  
+}
+```
+
+然后在任意地方使用 index.ts 中的组件，组件名为上面代码的 `import` 名
