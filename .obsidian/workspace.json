@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "README_INTEGRATE.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "README_INTEGRATE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "README_INTEGRATE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "README_INTEGRATE.md"
               }
             }
           }
@@ -148,12 +148,24 @@
   },
   "active": "f29e66af30dbfcf7",
   "lastOpenFiles": [
+    "README_INTEGRATE~.md",
+    "dist/index.html",
+    "dist/assets/vue-5532db34.svg",
+    "dist/assets/index-7805449f.css",
+    "dist/assets/index-02d07622.js",
+    "dist/assets",
+    "dist/vite.svg",
+    "dist",
+    "vite.config.ts.timestamp-1719804369322-ae537203e6e92.mjs",
+    "README_BUILD.md",
+    "README_INTEGRATE.md",
+    "README.md",
+    "Pasted image 20240701110832.png",
+    "images/Pasted image 20240701111932.png",
     "images/Pasted image 20240701111305.png",
     "images/Pasted image 20240701111236.png",
     "images",
     "images/Pasted image 20240701110947.png",
-    "README.md",
-    "Pasted.md",
-    "Pasted image 20240701110832.png"
+    "Pasted.md"
   ]
 }

@@ -20,6 +20,10 @@ npm i -g pnpm@8.0.0
 
 ## vite 创建项目
 
+### 1、创建项目
+
+
+
 注意：npm 版本必须在 16+
 
 ```sh
@@ -54,7 +58,7 @@ Done. Now run:
   pnpm run dev
 ```
 
-### 1.1、默认启动
+#### 1.1、默认启动
 
 在 package.json 中修改，添加 `--open` 自动打开浏览器
 
@@ -65,7 +69,7 @@ Done. Now run:
     }
 ```
 
-### 1.2、Eslint 配置
+#### 1.2、Eslint 配置
 
 [eslint 中文官网](http://eslint.cn) ，安装
 
@@ -231,3 +235,21 @@ npx husky add .husky/commit-msg
 在这个文件中配置 `pnpm commitlint`，后续提交的时候， `-m` 必须符合以上添加的配置才行，必须是英文，且冒号后面需要空一格，不能省略
 
 ![](images/Pasted%20image%2020240701111305.png)
+
+
+
+规范提交：`git commit -m 'feat: 新增git提交规则' `  这个就可以了
+
+
+
+### 6、强制pnpm 包管理工具
+
+见 `script/preinstall.js` 文件，然后在 `package.json` 中的 `scripts` 添加如下
+
+```
+"preinstall": "node ./scripts/preinstall.js",
+```
+
+再执行 `yarn add element-plus` 的时候就会报错了
+
+![](images/Pasted%20image%2020240701111932.png)
