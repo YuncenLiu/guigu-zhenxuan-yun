@@ -148,6 +148,11 @@
   },
   "active": "f29e66af30dbfcf7",
   "lastOpenFiles": [
+    "src/components/Test.vue",
+    "vite.config.ts.timestamp-1719815722845-b1b5ee36941a6.mjs",
+    "pnpm-lock.yaml.3238962850",
+    "vite.config.ts.timestamp-1719815447485-180f9dc79129c.mjs",
+    "tsconfig.app.json",
     "README_INTEGRATE~.md",
     "dist/index.html",
     "dist/assets/vue-5532db34.svg",
@@ -164,7 +169,6 @@
     "images/Pasted image 20240701111932.png",
     "images/Pasted image 20240701111305.png",
     "images/Pasted image 20240701111236.png",
-    "images",
     "images/Pasted image 20240701110947.png",
     "Pasted.md"
   ]

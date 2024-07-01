@@ -9,7 +9,7 @@ import 'element-plus/dist/index.css'
 // @ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-import App from './App.vue'
+import App from '@/App.vue'
 
 // 获取实例对象
 const app = createApp(App)

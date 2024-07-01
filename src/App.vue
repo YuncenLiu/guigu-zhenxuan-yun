@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // @ts-ignore
-import HelloWorld from './components/HelloWorld.vue'
-import { Plus, Edit, Delete } from '@element-plus/icons-vue'
+import HelloWorld from '@/components/HelloWorld.vue'
+import Test from '@/components/Test.vue'
 </script>
 
 <template>
@@ -13,17 +13,7 @@ import { Plus, Edit, Delete } from '@element-plus/icons-vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <el-button type="primary" size="default" :icon="Plus">主要按钮</el-button>
-  <el-button type="success" size="default" :icon="Edit">编辑按钮</el-button>
-  <el-button type="danger" size="default" :icon="Delete">删除按钮</el-button>
-  <el-pagination
-    :page-size="[100, 200, 300, 400]"
-    :small="small"
-    :disabled="disabled"
-    :background="background"
-    layout="total,sizes,prev,pager,next,jumper"
-    :total="400"
-  />
+  <Test/>
   <HelloWorld msg="Vite + Vue + HelloWorld" />
 </template>
 
