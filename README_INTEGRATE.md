@@ -117,3 +117,39 @@ export default {
 ```
 
 然后在任意地方使用 index.ts 中的组件，组件名为上面代码的 `import` 名
+
+### 5、集成SASS
+
+单独要用的话可以执行这个
+
+```sh
+pnpm add sass sass-loader -D
+```
+
+main.ts 中引入 sass 文件
+
+```
+//引入模板的全局的样式  
+import '@/style/index.scss'
+```
+
+此时 sass 文件中的变量还不能到处引用，创建 `/styles/variable.scss` 文件
+
+在 `vite.config.ts` 文件配置如下 在 `defineConfig` 下
+
+```js
+//scss全局变量一个配置  
+css: {  
+  preprocessorOptions: {  
+    scss: {  
+      javascriptEnabled: true,  
+      additionalData: '@import "./src/styles/variable.scss";',  
+    },  
+  },  
+},
+```
+
+### 6、mock数据
+
+[vite-plugin-mock 官网](https://github.com/vbenjs/vite-plugin-mock/blob/main/README.zh_CN.md)  只在开发阶段使用，上线之后，就不用了
+

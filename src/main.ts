@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
-import './style.css'
+//引入模板的全局的样式
+import '@/styles/index.scss'
 
 // 引入 element-plus 插件样式
 import ElementPlus from 'element-plus'
@@ -30,4 +31,16 @@ import globalComponent from '@/components'
 // 安装自定义插件, 会主动把 @/components/index.ts 里面的 install() 引入进来
 app.use(globalComponent)
 
+
+// 测试代码：测试假的接口能否使用
+import axios from 'axios';
+// 登录接口
+axios({
+  url: '/api/user/login',
+  method: 'POST',
+  data: {
+    username: 'admin',
+    password: '111111'
+  }
+})
 app.mount('#app')
