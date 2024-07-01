@@ -186,3 +186,13 @@ pnpm add sass sass-loader stylelint postcss postcss-scss postcss-html stylelint-
 ### 4、配置husky
 
 利用 husky 在代码提交之前触发 git hook，然后执行 ppm run format 做到自动格式化代码
+
+```sh
+pnpm install -D husky
+```
+
+初始化 husky 环境，会在项目根路径创建 .husky 文件，里面有` pre-commit` 文件，这里面就是 在`git` 提交之前会执行的钩子脚本
+
+```sh
+npx husky-init
+```
