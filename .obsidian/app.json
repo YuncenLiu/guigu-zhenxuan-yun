@@ -1,7 +1,0 @@
-{
-  "useMarkdownLinks": true,
-  "showUnsupportedFiles": true,
-  "attachmentFolderPath": "./images",
-  "userIgnoreFilters": ["node_modules/"],
-  "newLinkFormat": "relative"
-}
