@@ -9,21 +9,19 @@
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 ```
 
-
-
-### 2、src别名配置
+### 2、src 别名配置
 
 给 src 配置别名，使用 @ 代替 src
- 
+
 视频中添加配置，即可以在 main.ts 中直接使用 `import App from '@/App.vue'` ，这段也得加，不然 IDEA 爆红，虽然可以运行！
 
 ```json
-"compilerOptions": {  
-  "baseUrl": "./", // 解析非相对模块的基地址，默认是当前目录  
-  "paths": { //路径映射，相对于baseUrl  
-    "@/*": [  
-      "src/*"  
-    ]  
+"compilerOptions": {
+  "baseUrl": "./", // 解析非相对模块的基地址，默认是当前目录
+  "paths": { //路径映射，相对于baseUrl
+    "@/*": [
+      "src/*"
+    ]
   },
 }
 ```
@@ -39,18 +37,17 @@ pnpm install --save --dev @types/node
 在 `vite.config.ts` 配置文件中添加，然后重启就生效
 
 ```js
-import { defineConfig } from 'vite'  
-import vue from '@vitejs/plugin-vue'  
-import { resolve } from 'path'  
-  
-// https://vitejs.dev/config/  
-export default defineConfig({  
-  plugins: [vue()],  
-  resolve:{  
-    alias:{  
-      '@':resolve('src')  
-    }  
-  }  
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': resolve('src'),
+    },
+  },
 })
 ```
-

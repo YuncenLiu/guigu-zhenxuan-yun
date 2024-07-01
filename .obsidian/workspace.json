@@ -148,6 +148,7 @@
   },
   "active": "f29e66af30dbfcf7",
   "lastOpenFiles": [
+    "vite.config.ts.timestamp-1719816266299-4f88b0c8b9583.mjs",
     "src/components/Test.vue",
     "vite.config.ts.timestamp-1719815722845-b1b5ee36941a6.mjs",
     "pnpm-lock.yaml.3238962850",
@@ -161,7 +162,6 @@
     "dist/assets",
     "dist/vite.svg",
     "dist",
-    "vite.config.ts.timestamp-1719804369322-ae537203e6e92.mjs",
     "README_BUILD.md",
     "README_INTEGRATE.md",
     "README.md",

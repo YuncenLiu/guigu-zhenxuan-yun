@@ -13,7 +13,7 @@ import Test from '@/components/Test.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <Test/>
+  <Test />
   <HelloWorld msg="Vite + Vue + HelloWorld" />
 </template>
 
