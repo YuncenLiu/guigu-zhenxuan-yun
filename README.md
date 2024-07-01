@@ -183,7 +183,7 @@ pnpm install -D eslint-plugin-prettier prettier eslint-config-rettier
 pnpm add sass sass-loader stylelint postcss postcss-scss postcss-html stylelint-config-prettier stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-standard stylelint-config-standard-vue stylelint-scss stylelint-order stylelint-config-statndard-scss -D
 ```
 
-### 4、配置husky
+### 4、配置 husky
 
 利用 husky 在代码提交之前触发 git hook，然后执行 ppm run format 做到自动格式化代码
 
