@@ -229,3 +229,5 @@ npx husky add .husky/commit-msg
 ```
 
 在这个文件中配置 `pnpm commitlint`，后续提交的时候， `-m` 必须符合以上添加的配置才行，必须是英文，且冒号后面需要空一格，不能省略
+
+![](images/Pasted%20image%2020240701111305.png)
