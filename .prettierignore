@@ -5,3 +5,7 @@
 **/*.svg
 **/*.sh
 /public/*
+/.idea/*
+/.obsidian/*
+/.vscode/*
+/.idea/*
