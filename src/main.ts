@@ -11,12 +11,11 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
 import App from './App.vue'
 
-
 // 获取实例对象
 const app = createApp(App)
 // 安装 element-plus 插件
-app.use(ElementPlus,{
+app.use(ElementPlus, {
   // element-plus 国际化配置
-  locale: zhCn
+  locale: zhCn,
 })
 app.mount('#app')

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // @ts-ignore
 import HelloWorld from './components/HelloWorld.vue'
-import { Plus,Edit,Delete } from '@element-plus/icons-vue'
+import { Plus, Edit, Delete } from '@element-plus/icons-vue'
 </script>
 
 <template>
@@ -17,7 +17,7 @@ import { Plus,Edit,Delete } from '@element-plus/icons-vue'
   <el-button type="success" size="default" :icon="Edit">编辑按钮</el-button>
   <el-button type="danger" size="default" :icon="Delete">删除按钮</el-button>
   <el-pagination
-    :page-size="[100,200,300,400]"
+    :page-size="[100, 200, 300, 400]"
     :small="small"
     :disabled="disabled"
     :background="background"

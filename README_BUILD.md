@@ -22,8 +22,6 @@ npm i -g pnpm@8.0.0
 
 ### 1、创建项目
 
-
-
 注意：npm 版本必须在 16+
 
 ```sh
@@ -236,13 +234,9 @@ npx husky add .husky/commit-msg
 
 ![](images/Pasted%20image%2020240701111305.png)
 
+规范提交：`git commit -m 'feat: 新增git提交规则' ` 这个就可以了
 
-
-规范提交：`git commit -m 'feat: 新增git提交规则' `  这个就可以了
-
-
-
-### 6、强制pnpm 包管理工具
+### 6、强制 pnpm 包管理工具
 
 见 `script/preinstall.js` 文件，然后在 `package.json` 中的 `scripts` 添加如下
 
