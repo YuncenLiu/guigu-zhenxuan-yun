@@ -181,9 +181,9 @@ axios({
 
 [视频地址](https://www.bilibili.com/video/BV1Xh411V7b5/?p=28) 详细配置见：`/src/utils/request.ts`
 
-### 8、安装pinia
+### 8、安装 pinia
 
-在 Vue插件就可以看见 大菠萝了
+在 Vue 插件就可以看见 大菠萝了
 
 ```sh
 pnpm i pinia@2.0.36 --save -D
@@ -191,4 +191,3 @@ pnpm i pinia@2.0.36 --save -D
 
 ![](images/Pasted%20image%2020240702142856.png)
 常见的代码规范是在 `src` 下创建 `store` 目录，其下的 `index.ts` 文件会引入 `pinia`
-
