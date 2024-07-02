@@ -11,13 +11,15 @@ export interface ResponseData {
   message: string
   ok: boolean
 }
-
+interface dataType {
+  token: string
+}
 //定义登录接口返回数据类型
 export interface loginResponseData extends ResponseData {
-  data: string
+  data: dataType
 }
 
-//定义获取用户信息返回数据类型
+// 定义获取用户信息返回数据类型
 export interface userInfoResponseData extends ResponseData {
   data: {
     routes: string[]
@@ -26,4 +28,25 @@ export interface userInfoResponseData extends ResponseData {
     name: string
     avatar: string
   }
+}
+
+interface userInfo {
+  userId: number
+  avatar: string
+  username: string
+  password: string
+  desc: string
+  roles: string[]
+  buttons: string[]
+  routes: string[]
+  token: string
+}
+
+interface user {
+  checkUser: userInfo
+}
+
+export interface userResponseData {
+  code: number
+  data: user
 }
