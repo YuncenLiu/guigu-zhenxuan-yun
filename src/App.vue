@@ -6,10 +6,4 @@
 
 <script setup lang="ts"></script>
 
-<style scoped lang="scss">
-div {
-  h2 {
-    color: $color;
-  }
-}
-</style>
+<style scoped lang="scss"></style>

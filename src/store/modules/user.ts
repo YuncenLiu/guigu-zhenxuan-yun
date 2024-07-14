@@ -5,6 +5,8 @@ import { reqLogin } from '@/api/user'
 import { GET_TOKEN, SET_TOKEN } from '@/utils/token'
 import { UserState } from '@/store/modules/types/type'
 
+import { constantRoute } from '@/router/routes'
+
 //创建用户小仓库
 let useUserStore = defineStore('User', {
   //小仓库存储数据地方
@@ -12,6 +14,8 @@ let useUserStore = defineStore('User', {
     return {
       //用户唯一标识token
       token: GET_TOKEN,
+      // 仓库存储菜单路由
+      menuRoutes: constantRoute,
     }
   },
   //异步|逻辑的地方
