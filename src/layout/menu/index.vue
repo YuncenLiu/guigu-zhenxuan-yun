@@ -9,9 +9,9 @@
     <!--    没有子路由 -->
     <template v-if="!item.children">
       <el-menu-item
-          v-if="!item.meta.hidden"
-          :index="item.path"
-          @click="goRoute"
+        v-if="!item.meta.hidden"
+        :index="item.path"
+        @click="goRoute"
       >
         <template #title>
           <el-icon>
@@ -25,8 +25,8 @@
     <!--    有子路由但是只有一个 -->
     <template v-if="item.children && item.children.length === 1">
       <el-menu-item
-          v-if="!item.children[0].meta.hidden"
-          :index="item.children[0].path"
+        v-if="!item.children[0].meta.hidden"
+        :index="item.children[0].path"
       >
         <template #title>
           <el-icon>
@@ -38,8 +38,8 @@
     </template>
 
     <el-sub-menu
-        v-if="item.children && item.children.length > 1"
-        :index="item.path"
+      v-if="item.children && item.children.length > 1"
+      :index="item.path"
     >
       <template #title>
         <el-icon>
@@ -69,15 +69,15 @@
 
 <script setup lang="ts">
 // 获取父组件传递过来的 全路路由组件
-defineProps(['menuList']);
-import { useRouter } from 'vue-router';
+defineProps(['menuList'])
+import { useRouter } from 'vue-router'
 
-let $router = useRouter();
+let $router = useRouter()
 
 const goRoute = (vc: any) => {
   // console.log(vc.index)
-//  路由跳转
-  $router.push(vc.index);
+  //  路由跳转
+  $router.push(vc.index)
 }
 </script>
 

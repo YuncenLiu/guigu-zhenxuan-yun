@@ -70,7 +70,7 @@ export const constantRoute = [
     name: 'Acl',
     meta: {
       title: '权限管理',
-      icon: 'Lock'
+      icon: 'Lock',
     },
     redirect: '/acl/user',
     children: [
@@ -80,8 +80,8 @@ export const constantRoute = [
         name: 'User',
         meta: {
           title: '用户管理',
-          icon: 'User'
-        }
+          icon: 'User',
+        },
       },
       {
         path: '/acl/role',
@@ -89,8 +89,8 @@ export const constantRoute = [
         name: 'Role',
         meta: {
           title: '角色管理',
-          icon: 'UserFilled'
-        }
+          icon: 'UserFilled',
+        },
       },
       {
         path: '/acl/permission',
@@ -98,10 +98,10 @@ export const constantRoute = [
         name: 'Permission',
         meta: {
           title: '菜单管理',
-          icon: 'Monitor'
-        }
-      }
-    ]
+          icon: 'Monitor',
+        },
+      },
+    ],
   },
   {
     path: '/product',
@@ -116,40 +116,40 @@ export const constantRoute = [
       {
         path: '/product/trademark',
         component: () => import('@/views/product/trademark/index.vue'),
-        name: "Trademark",
+        name: 'Trademark',
         meta: {
           title: '品牌管理',
           icon: 'ShoppingCartFull',
-        }
+        },
       },
       {
         path: '/product/attr',
         component: () => import('@/views/product/attr/index.vue'),
-        name: "Attr",
+        name: 'Attr',
         meta: {
           title: '属性管理',
           icon: 'ChromeFilled',
-        }
+        },
       },
       {
         path: '/product/spu',
         component: () => import('@/views/product/spu/index.vue'),
-        name: "Spu",
+        name: 'Spu',
         meta: {
           title: 'SPU管理',
           icon: 'Calendar',
-        }
+        },
       },
       {
         path: '/product/sku',
         component: () => import('@/views/product/sku/index.vue'),
-        name: "Sku",
+        name: 'Sku',
         meta: {
           title: 'SKU管理',
           icon: 'Orange',
-        }
+        },
       },
-    ]
+    ],
   },
   {
     path: '/:pathMatch(.*)*',
