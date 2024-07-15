@@ -28,7 +28,6 @@ let $route = useRoute()
 // 控制菜单折叠与打开的变量
 let fold = ref(true)
 const changeIcon = () => {
-  console.log(123)
   //图标进行切换
   LayOutSettingStore.fold = !LayOutSettingStore.fold
 }

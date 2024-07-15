@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import { constantRoute } from '@/router/routes'
 
 // 创建路由器
-let router = createRouter({
+const router = createRouter({
   // 路由模式 hash
   history: createWebHashHistory(),
   // 引入常量路由
