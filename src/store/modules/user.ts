@@ -2,12 +2,22 @@
 import { defineStore } from 'pinia'
 import {
   loginFormData,
+  loginFormMockData,
   loginResponseData,
+  loginResponseMockData,
   userInfoResponseData,
+  userInfoResponseMockData,
 } from '@/api/user/type'
-import { reqLogin, reqUserInfo, reqLogout } from '@/api/user'
+import {
+  reqLogin,
+  reqUserInfo,
+  reqLogout,
+  reqMockLogin,
+  reqMockUserInfo,
+  reqMockLogout,
+} from '@/api/user'
 import { GET_TOKEN, SET_TOKEN, REMOVE_TOKEN } from '@/utils/token'
-import { UserState } from '@/store/modules/types/type'
+import type { UserState } from './types/type'
 
 import { constantRoute } from '@/router/routes'
 
@@ -36,6 +46,53 @@ const useUserStore = defineStore('User', {
       if (result.code == 200) {
         //pinia仓库存储一下token
         //由于pinia|vuex存储数据其实利用js对象
+        this.token = result.data as string
+        //本地存储持久化存储一份
+        SET_TOKEN(result.data as string)
+        return 'ok'
+      } else {
+        return Promise.reject(new Error(result.data))
+      }
+    },
+    //获取用户信息方法
+    async userInfo() {
+      //获取用户信息进行存储仓库当中[用户头像、名字]
+      const result: userInfoResponseData = await reqUserInfo()
+      console.log('info', result)
+      //如果获取用户信息成功，存储一下用户信息
+      if (result.code == 200) {
+        this.username = result.data.name
+        this.avatar = result.data.avatar
+        return 'ok'
+      } else {
+        return Promise.reject('获取用户信息失败')
+      }
+    },
+    //退出登录
+    async userLogout() {
+      let result = await reqLogout()
+      if (result.code == 200) {
+        this.token = ''
+        this.username = ''
+        this.avatar = ''
+        REMOVE_TOKEN()
+        console.log(result)
+        return 'ok'
+      } else {
+        return Promise.reject(new Error(result.message))
+      }
+    },
+
+    //用户登录的方法
+    async userMockLogin(data: loginFormData) {
+      //登录请求
+      const result: loginResponseMockData = await reqMockLogin(data)
+      console.log('login', result)
+      //登录请求:成功200->token
+      //登录请求:失败201->登录失败错误的信息
+      if (result.code == 200) {
+        //pinia仓库存储一下token
+        //由于pinia|vuex存储数据其实利用js对象
         this.token = result.data.token as string
         //本地存储持久化存储一份
         SET_TOKEN(result.data.token as string)
@@ -45,9 +102,9 @@ const useUserStore = defineStore('User', {
       }
     },
     //获取用户信息方法
-    async userInfo() {
+    async userMockInfo() {
       //获取用户信息进行存储仓库当中[用户头像、名字]
-      const result: userInfoResponseData = await reqUserInfo()
+      const result: userInfoResponseMockData = await reqMockUserInfo()
       //如果获取用户信息成功，存储一下用户信息
       if (result.code == 200) {
         this.username = result.data.checkUser.username
@@ -58,7 +115,7 @@ const useUserStore = defineStore('User', {
       }
     },
     //退出登录
-    async userLogout() {
+    async userMockLogout() {
       this.token = ''
       this.username = ''
       this.avatar = ''
