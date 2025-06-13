@@ -8,15 +8,15 @@ import setting from '@/setting'
 import useUserStore from './store/modules/user'
 import pinia from './store'
 import * as path from 'path'
-let userStore = useUserStore(pinia)
+const userStore = useUserStore(pinia)
 
 //全局守卫:项目当中任意路由切换都会触发的钩子
 //全局前置守卫
 router.beforeEach(async (to: any, from: any, next: any) => {
   document.title = `${setting.title} - ${to.meta.title}`
   nprogress.start()
-  let token = userStore.token
-  let username = userStore.username
+  const token = userStore.token
+  const username = userStore.username
   console.log('router-beforeEach 全局前置路由', token)
   if (token) {
     if (to.path == '/login') {
